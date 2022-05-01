@@ -3,8 +3,10 @@ import passport from 'passport';
 import 'dotenv/config'
 import errorCodes from './errors';
 import routes from './routes';
+import swagger from './swagger';
 import './database';
 import './passport';
+
 import pkg from 'lodash';
 const { map } = pkg;
 
@@ -14,6 +16,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(passport.initialize());
 app.use(passport.session());
+
+// loading swagger
+swagger(app);
 
 // loading route
 routes(app);

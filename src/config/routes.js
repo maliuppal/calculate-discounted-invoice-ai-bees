@@ -1,6 +1,5 @@
 import glob from 'glob';
 
-import path from 'path';
 const routes = (app) => {
 
     const version = `/api/v1`;
